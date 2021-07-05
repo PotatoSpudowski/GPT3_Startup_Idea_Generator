@@ -14,9 +14,7 @@ def home():
 def predict():
     inputs = [x for x in request.form.values()]
     response = gpt3Response(inputs)
-    # print(response)
-    # idea = response['choices'][0]['text'][1:]
-    idea = response
+    idea = response['choices'][0]['text'][1:]
     return render_template('index.html', prediction_text="Startup Idea: {}".format(idea))
 
 if __name__ == '__main__':
